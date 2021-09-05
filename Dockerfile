@@ -1,6 +1,6 @@
 FROM golang:buster as builder
-RUN useradd -ms /bin/bash newuser
-USER newuser
+#RUN useradd -ms /bin/bash newuser
+#USER newuser
 WORKDIR /home/newuser
 ADD . .
 RUN go env -w GO111MODULE=auto
