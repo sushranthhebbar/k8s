@@ -16,10 +16,16 @@ spec:
           runAsUser: 2000
           runAsGroup: 3000
           fsGroup: 2000
+      volumes:
+        - name: sec-ctx-vol
+        emptyDir: {}
       containers:
       - name: hello-world
         image: okteto.dev/hello-world:latest
         securityContext:
           runAsUser: 1000
+         volumeMounts:
+          - name: sec-ctx-vol
+          mountPath: /data/demo
         ports:
         - containerPort: 8080
