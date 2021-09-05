@@ -24,8 +24,8 @@ spec:
         image: okteto.dev/hello-world:latest
         securityContext:
           runAsUser: 1000
-         volumeMounts:
-          - name: sec-ctx-vol
-          mountPath: /data/demo
+        volumeMounts:
+        -  name: sec-ctx-vol
+           mountPath: /data/demo
         ports:
         - containerPort: 8080
