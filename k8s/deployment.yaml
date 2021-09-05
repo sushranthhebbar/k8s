@@ -19,5 +19,7 @@ spec:
       containers:
       - name: hello-world
         image: okteto.dev/hello-world:latest
+        securityContext:
+          runAsUser: 1000
         ports:
         - containerPort: 8080
