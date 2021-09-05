@@ -2,6 +2,9 @@ name: hello-world
 image: okteto/golang:1
 command: bash
 securityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
   capabilities:
     add:
     - SYS_PTRACE
