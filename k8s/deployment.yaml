@@ -52,6 +52,13 @@ spec:
               value: Awesome
           periodSeconds: 5
 
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /data/demo/testfile
+          periodSeconds: 5 
+
         startupProbe:
           httpGet:
             path: /healthz
