@@ -22,12 +22,7 @@ spec:
       containers:
       - name: hello-world
         image: okteto.dev/hello-world:latest
-        startupProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          failureThreshold: 2
-          periodSeconds: 10
+        
         livenessProbe:
           httpGet:
             path: /healthz
@@ -35,8 +30,15 @@ spec:
             httpHeaders:
             - name: Custom-Header
               value: Awesome
-          initialDelaySeconds: 3
-          periodSeconds: 3
+          periodSeconds: 5
+
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          failureThreshold: 2
+          periodSeconds: 10
+
         securityContext:
           runAsUser: 1000
         volumeMounts:

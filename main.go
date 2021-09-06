@@ -13,14 +13,13 @@ func main() {
 
     http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
         duration := time.Now().Sub(started)
-        fmt.Println("In.")
-        if duration.Seconds() > 25 {
-            w.WriteHeader(500)
-            w.Write([]byte(fmt.Sprintf("error: %v", duration.Seconds())))
-            fmt.Println(">10")
-        } else {
+        if duration.Seconds() > 40 {
             w.WriteHeader(200)
             w.Write([]byte("ok"))
+            fmt.Println(">10")
+        } else {
+            w.WriteHeader(500)
+            w.Write([]byte(fmt.Sprintf("error: %v", duration.Seconds())))
             fmt.Println("<10")
         }
     })
