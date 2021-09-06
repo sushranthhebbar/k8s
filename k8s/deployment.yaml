@@ -29,6 +29,8 @@ spec:
         -  name: sec-ctx-vol
            mountPath: /data/demo
         
+        command: ["ls"]
+        
         #args: 
         #- /bin/sh
         #- -c
