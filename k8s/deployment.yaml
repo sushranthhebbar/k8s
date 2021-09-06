@@ -23,6 +23,15 @@ spec:
       - name: hello-world
         image: okteto.dev/hello-world:latest
         
+        securityContext:
+          runAsUser: 1000
+        volumeMounts:
+        -  name: sec-ctx-vol
+           mountPath: /data/demo
+        
+        args: 
+        -  echo Hi > /data/demo/testfile   
+    
         livenessProbe:
           httpGet:
             path: /healthz
@@ -38,11 +47,6 @@ spec:
             port: 8080
           failureThreshold: 5
           periodSeconds: 10
-
-        securityContext:
-          runAsUser: 1000
-        volumeMounts:
-        -  name: sec-ctx-vol
-           mountPath: /data/demo
+           
         ports:
         - containerPort: 8080
