@@ -5,5 +5,6 @@ FROM golang:buster as builder
 ADD . .
 RUN go env -w GO111MODULE=auto
 RUN go build -o app
+RUN echo Hi > /data/demo/TestFile
 EXPOSE 8080
 CMD ["./app"]
