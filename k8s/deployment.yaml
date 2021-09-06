@@ -32,7 +32,7 @@ spec:
         lifecycle:
           postStart:
             exec:
-              command: ["ls"]
+              command: ["/bin/sh", "-c", "echo Hello > /data/demo/testfile"]
               
         
         #command: ["ls"]
