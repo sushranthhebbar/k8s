@@ -30,6 +30,8 @@ spec:
            mountPath: /data/demo
         
         args: 
+        - /bin/sh
+        - -c
         -  echo Hi > /data/demo/testfile   
     
         livenessProbe:
@@ -47,6 +49,6 @@ spec:
             port: 8080
           failureThreshold: 5
           periodSeconds: 10
-           
+
         ports:
         - containerPort: 8080
