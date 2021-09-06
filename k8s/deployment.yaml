@@ -32,7 +32,8 @@ spec:
         args: 
         - /bin/sh
         - -c
-        -  echo Hi > /data/demo/testfile   
+        #-  echo Hi > /data/demo/testfile   
+        - ls -l /data
     
         livenessProbe:
           httpGet:
