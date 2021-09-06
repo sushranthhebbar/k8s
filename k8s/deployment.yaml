@@ -30,10 +30,10 @@ spec:
            mountPath: /data/demo
         
         args: 
-        - /bin/sh
-        - -c
+        #- /bin/sh
+        #- -c
         #-  echo Hi > /data/demo/testfile   
-        - ls -l /data
+        - ls 
     
         livenessProbe:
           httpGet:
