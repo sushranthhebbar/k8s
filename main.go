@@ -13,7 +13,7 @@ func main() {
 
     http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
         duration := time.Now().Sub(started)
-        if duration.Seconds() > 5 {
+        if duration.Seconds() > 20 {
             w.WriteHeader(200)
             w.Write([]byte("ok"))
             fmt.Println(">5")
