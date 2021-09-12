@@ -18,7 +18,8 @@ spec:
           fsGroup: 2000
       volumes:
       - name: sec-ctx-vol
-        emptyDir: {}
+         persistentVolumeClaim:
+            claimName: okteto-pv-claim
       containers:
       - name: hello-world
         image: okteto.dev/hello-world:latest
